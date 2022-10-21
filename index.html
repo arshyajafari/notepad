@@ -10,90 +10,100 @@
   <body>
     <div class="container">
       <div class="tool-bar">
-        <div>
+        <div class="left-tools">
           <div class="tool-bar-font">
-            <select>
-              <option value="Calibri">Calibri</option>
-              <option value="Courier New">Courier New</option>
-              <option value="Geneva">Geneva</option>
-              <option value="JetBrains Mono">JetBrains Mono</option>
-              <option value="monospace">Monospace</option>
-              <option value="Segoe UI">Segoe UI</option>
-              <option value="Tahoma">Tahoma</option>
-              <option value="Times New Roman">Times New Roman</option>
-              <option value="Verdana">Verdana</option>
-            </select>
-            <button class="dec fa fa-minus" onclick="dec()"></button>
-            <select>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="14">14</option>
-              <option value="16">16</option>
-              <option value="18">18</option>
-              <option value="20">20</option>
-              <option value="24">24</option>
-              <option value="36">36</option>
-              <option value="40">40</option>
-              <option value="48">48</option>
-              <option value="54">54</option>
-              <option value="66">66</option>
-              <option value="74">74</option>
-              <option value="96">90</option>
-            </select>
-            <button class="inc fa fa-plus" onclick="inc()"></button>
+            <div class="tool-bar-font-family">
+              <select class="family-font" onchange="fontFamiling()">
+                <option value="Calibri">Calibri</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Geneva">Geneva</option>
+                <option value="JetBrains Mono">JetBrains Mono</option>
+                <option value="monospace">Monospace</option>
+                <option value="Segoe UI">Segoe UI</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+              </select>
+            </div>
+            <div class="tool-bar-font-size">
+              <button class="dec fa fa-minus" onclick="dec()"></button>
+              <select class="size-font" onchange="fontSizing()">
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+                <option value="24">24</option>
+                <option value="36">36</option>
+                <option value="40">40</option>
+                <option value="48">48</option>
+                <option value="54">54</option>
+                <option value="66">66</option>
+                <option value="74">74</option>
+                <option value="86">86</option>
+                <option value="90">90</option>
+                <option value="96">96</option>
+              </select>
+              <button class="inc fa fa-plus" onclick="inc()"></button>
+            </div>
           </div>
-          <div class="tool-bar-styled">
+          <div class="tool-bar-font-style">
             <input type="color" class="color" onchange="color(this.value)" />
-            <button class="bold fa fa-bold" onclick="bold(this)"></button>
-            <button class="italic fa fa-italic" onclick="italic(this)"></button>
+            <button class="bold fa fa-bold" onclick="bold()"></button>
+            <button class="italic fa fa-italic" onclick="italic()"></button>
             <button
               class="underline fa fa-underline"
-              onclick="underline(this)"
+              onclick="underline()"
             ></button>
           </div>
         </div>
-        <div>
+        <div class="center-tools">
           <div>
             <button
               class="left fa fa-align-left active"
-              onclick="left(this)"
+              onclick="left()"
             ></button>
             <button
               class="center fa fa-align-center"
-              onclick="center(this)"
+              onclick="center()"
             ></button>
-            <button
-              class="right fa fa-align-right"
-              onclick="right(this)"
-            ></button>
+            <button class="right fa fa-align-right" onclick="right()"></button>
             <button
               class="justify fa fa-align-justify"
-              onclick="justify(this)"
+              onclick="justify()"
             ></button>
           </div>
-          <div>
+          <div class="dir">
             <button
               class="paragraph-ltr fa fa-paragraph active"
-              onclick="paragraphLTR(this)"
+              onclick="paragraphLTR()"
             ></button>
             <button
               class="paragraph-rtl fa fa-paragraph"
-              onclick="paragraphRTL(this)"
+              onclick="paragraphRTL()"
             ></button>
           </div>
         </div>
-        <div>
+        <div class="right-tools">
           <div>
             <button
               class="download fa fa-floppy-o"
-              onclick="download(this)"
+              onclick="download()"
             ></button>
-            <button class="print fa fa-print" onclick="print(this)"></button>
+            <button class="print fa fa-print" onclick="print()"></button>
           </div>
         </div>
       </div>
-      <textarea class="text" id="text" placeholder="start writing"></textarea>
+      <textarea
+        class="text"
+        id="text"
+        placeholder="start writing"
+        style="font-family: Arial; font-size: 14px"
+      ></textarea>
     </div>
     <script src="./main.js"></script>
   </body>

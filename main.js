@@ -1,52 +1,65 @@
 const text = document.querySelector(".text");
-let defaultFontSize = 14;
+var selectFontSize = document.querySelector(".size-font");
+var defaultFontSize = 14;
+selectFontSize.value = defaultFontSize;
 
 const isActive = (btn) =>
   document.querySelector("." + btn).classList.toggle("active");
 
-const fontFamiling = () => {};
+const fontFamiling = () => {
+  const selectFontFamily = document.querySelector(".family-font");
+  text.style.fontFamily = selectFontFamily.value;
+};
 
 const color = (colorText) => {
   text.style.color = colorText;
 };
 
-const fontSizing = () => {};
+const fontSizing = () => {
+  text.style.fontSize = `${selectFontSize.value}px`;
+};
 
 const dec = () => {
-  defaultFontSize -= 2;
-  text.style.fontSize = defaultFontSize + "px";
+  const selOpt = document.querySelectorAll(".size-font option");
+  for (let i = selOpt.length - 1; i > 0; i--) {
+    if (selOpt[i].value === selectFontSize.value) {
+      text.style.fontSize = `${selOpt[i - 1].value}px`;
+      selectFontSize.value = selOpt[i - 1].value;
+      break;
+    }
+  }
 };
 
 const inc = () => {
-  defaultFontSize += 2;
-  text.style.fontSize = defaultFontSize + "px";
-};
-
-const bold = (bold) => {
-  if (isActive("bold")) {
-    text.style.fontWeight = "bold";
-  } else {
-    text.style.fontWeight = "100";
+  const selOpt = document.querySelectorAll(".size-font option");
+  for (let i = 0; i < selOpt.length - 1; i++) {
+    if (selOpt[i].value === selectFontSize.value) {
+      text.style.fontSize = `${selOpt[i + 1].value}px`;
+      selectFontSize.value = selOpt[i + 1].value;
+      break;
+    }
   }
 };
 
-const italic = (italic) => {
-  if (isActive("italic")) {
-    text.style.fontStyle = "italic";
-  } else {
-    text.style.fontStyle = "normal";
-  }
+const bold = () => {
+  isActive("bold")
+    ? (text.style.fontWeight = "bold")
+    : (text.style.fontWeight = "100");
 };
 
-const underline = (underline) => {
-  if (isActive("underline")) {
-    text.style.fontStyle = "underline";
-  } else {
-    text.style.fontStyle = "normal";
-  }
+const italic = () => {
+  isActive("italic")
+    ? (text.style.fontStyle = "italic")
+    : (text.style.fontStyle = "normal");
 };
 
-const left = (left) => {
+const underline = () => {
+  isActive("underline")
+    ? (text.style.textDecoration = "underline")
+    : (text.style.textDecoration = "none");
+};
+
+const left = () => {
   if (isActive("left")) {
     pTextAlign = text.style.textAlign;
     text.style.textAlign = "left";
@@ -64,7 +77,7 @@ const left = (left) => {
   }
 };
 
-const center = (center) => {
+const center = () => {
   if (isActive("center")) {
     pTextAlign = text.style.textAlign;
     text.style.textAlign = "center";
@@ -82,7 +95,7 @@ const center = (center) => {
   }
 };
 
-const right = (right) => {
+const right = () => {
   if (isActive("right")) {
     pTextAlign = text.style.textAlign;
     text.style.textAlign = "right";
@@ -100,7 +113,7 @@ const right = (right) => {
   }
 };
 
-const justify = (justify) => {
+const justify = () => {
   if (isActive("justify")) {
     pTextAlign = text.style.textAlign;
     text.style.textAlign = "justify";
@@ -118,7 +131,7 @@ const justify = (justify) => {
   }
 };
 
-const paragraphLTR = (paragraphLTR) => {
+const paragraphLTR = () => {
   if (isActive("paragraph-ltr")) {
     direction = text.style.direction;
     text.style.direction = "ltr";
@@ -130,7 +143,7 @@ const paragraphLTR = (paragraphLTR) => {
   }
 };
 
-const paragraphRTL = (paragraphRTL) => {
+const paragraphRTL = () => {
   if (isActive("paragraph-rtl")) {
     direction = text.style.direction;
     text.style.direction = "rtl";
