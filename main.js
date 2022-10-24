@@ -6,6 +6,13 @@ selectFontSize.value = defaultFontSize;
 const isActive = (btn) =>
   document.querySelector("." + btn).classList.toggle("active");
 
+const drawerHandler = () => {
+  const drawer = document.querySelector(".drawer");
+  drawer.style.display === "block"
+    ? (drawer.style.display = "none")
+    : (drawer.style.display = "block");
+};
+
 const fontFamiling = () => {
   const selectFontFamily = document.querySelector(".family-font");
   text.style.fontFamily = selectFontFamily.value;
@@ -155,7 +162,7 @@ const paragraphRTL = () => {
   }
 };
 
-const download = () => {
+const saveFile = () => {
   let timestamp = new Date();
   const blob = new Blob([text.value]);
   const fileUrl = URL.createObjectURL(blob);
@@ -166,11 +173,11 @@ const download = () => {
 };
 
 const print = () => {
-  let timestamp = new Date();
-  const blob = new Blob([text.value], { type: "application/pdf" });
-  const fileUrl = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.download = `notepad_file_${timestamp.getTime()}`;
-  link.href = fileUrl;
-  link.click();
+  const WinPrint = window.open(
+    "",
+    "",
+    "left=0,top=0,toolbar=0,scrollbars=0,status=0"
+  );
+  WinPrint.print();
+  WinPrint.close();
 };

@@ -9,47 +9,152 @@
   </head>
   <body>
     <div class="container">
+      <div class="mobile-container">
+        <div class="nav">
+          <p class="title-app">Notepad</p>
+          <div class="drawer">
+            <div class="mobile-tool-bar">
+              <div class="left-tools">
+                <div class="tool-bar-font-family">
+                  <select class="family-font" onchange="fontFamiling()">
+                    <option value="Aviny">Aviny</option>
+                    <option value="Calibri">Calibri</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Geneva">Geneva</option>
+                    <option value="IRANSans">IRANSans</option>
+                    <option value="JetBrains Mono">JetBrains Mono</option>
+                    <option value="Lalezar">Lalezar</option>
+                    <option value="monospace">Monospace</option>
+                    <option value="Segoe UI">Segoe UI</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Verdana">Verdana</option>
+                  </select>
+                </div>
+                <div class="tool-bar-font-size">
+                  <button class="dec fa fa-minus" onclick="dec()"></button>
+                  <select class="size-font" onchange="fontSizing()">
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                    <option value="24">24</option>
+                    <option value="36">36</option>
+                    <option value="40">40</option>
+                    <option value="48">48</option>
+                    <option value="54">54</option>
+                    <option value="66">66</option>
+                    <option value="74">74</option>
+                    <option value="86">86</option>
+                    <option value="90">90</option>
+                    <option value="96">96</option>
+                  </select>
+                  <button class="inc fa fa-plus" onclick="inc()"></button>
+                </div>
+                <div class="tool-bar-font-style">
+                  <input
+                    type="color"
+                    class="color"
+                    onchange="color(this.value)"
+                  />
+                  <button class="bold fa fa-bold" onclick="bold()"></button>
+                  <button
+                    class="italic fa fa-italic"
+                    onclick="italic()"
+                  ></button>
+                  <button
+                    class="underline fa fa-underline"
+                    onclick="underline()"
+                  ></button>
+                </div>
+              </div>
+              <div class="center-tools">
+                <button
+                  class="left fa fa-align-left active"
+                  onclick="left()"
+                ></button>
+                <button
+                  class="center fa fa-align-center"
+                  onclick="center()"
+                ></button>
+                <button
+                  class="right fa fa-align-right"
+                  onclick="right()"
+                ></button>
+                <button
+                  class="justify fa fa-align-justify"
+                  onclick="justify()"
+                ></button>
+                <button
+                  class="paragraph-ltr fa fa-paragraph active"
+                  onclick="paragraphLTR()"
+                ></button>
+                <button
+                  class="paragraph-rtl fa fa-paragraph"
+                  onclick="paragraphRTL()"
+                ></button>
+              </div>
+              <div class="right-tools">
+                <button
+                  class="saveFile fa fa-floppy-o"
+                  onclick="saveFile()"
+                ></button>
+                <button class="print fa fa-print" onclick="print()"></button>
+              </div>
+            </div>
+          </div>
+          <div class="mobile-menu" onclick="drawerHandler()">
+            <button class="mobile-menu-icon fa fa-bars"></button>
+          </div>
+        </div>
+      </div>
       <div class="tool-bar">
         <div class="left-tools">
-          <div class="tool-bar-font">
-            <div class="tool-bar-font-family">
-              <select class="family-font" onchange="fontFamiling()">
-                <option value="Calibri">Calibri</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Geneva">Geneva</option>
-                <option value="JetBrains Mono">JetBrains Mono</option>
-                <option value="monospace">Monospace</option>
-                <option value="Segoe UI">Segoe UI</option>
-                <option value="Tahoma">Tahoma</option>
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="Verdana">Verdana</option>
-              </select>
-            </div>
-            <div class="tool-bar-font-size">
-              <button class="dec fa fa-minus" onclick="dec()"></button>
-              <select class="size-font" onchange="fontSizing()">
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="14">14</option>
-                <option value="16">16</option>
-                <option value="18">18</option>
-                <option value="20">20</option>
-                <option value="24">24</option>
-                <option value="36">36</option>
-                <option value="40">40</option>
-                <option value="48">48</option>
-                <option value="54">54</option>
-                <option value="66">66</option>
-                <option value="74">74</option>
-                <option value="86">86</option>
-                <option value="90">90</option>
-                <option value="96">96</option>
-              </select>
-              <button class="inc fa fa-plus" onclick="inc()"></button>
-            </div>
+          <div class="tool-bar-font-family">
+            <select class="family-font" onchange="fontFamiling()">
+              <option value="Aviny">Aviny</option>
+              <option value="Calibri">Calibri</option>
+              <option value="Courier New">Courier New</option>
+              <option value="Geneva">Geneva</option>
+              <option value="IRANSans">IRANSans</option>
+              <option value="JetBrains Mono">JetBrains Mono</option>
+              <option value="Lalezar">Lalezar</option>
+              <option value="monospace">Monospace</option>
+              <option value="Segoe UI">Segoe UI</option>
+              <option value="Tahoma">Tahoma</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Verdana">Verdana</option>
+            </select>
+          </div>
+          <div class="tool-bar-font-size">
+            <button class="dec fa fa-minus" onclick="dec()"></button>
+            <select class="size-font" onchange="fontSizing()">
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="14">14</option>
+              <option value="16">16</option>
+              <option value="18">18</option>
+              <option value="20">20</option>
+              <option value="24">24</option>
+              <option value="36">36</option>
+              <option value="40">40</option>
+              <option value="48">48</option>
+              <option value="54">54</option>
+              <option value="66">66</option>
+              <option value="74">74</option>
+              <option value="86">86</option>
+              <option value="90">90</option>
+              <option value="96">96</option>
+            </select>
+            <button class="inc fa fa-plus" onclick="inc()"></button>
           </div>
           <div class="tool-bar-font-style">
             <input type="color" class="color" onchange="color(this.value)" />
@@ -62,46 +167,34 @@
           </div>
         </div>
         <div class="center-tools">
-          <div>
-            <button
-              class="left fa fa-align-left active"
-              onclick="left()"
-            ></button>
-            <button
-              class="center fa fa-align-center"
-              onclick="center()"
-            ></button>
-            <button class="right fa fa-align-right" onclick="right()"></button>
-            <button
-              class="justify fa fa-align-justify"
-              onclick="justify()"
-            ></button>
-          </div>
-          <div class="dir">
-            <button
-              class="paragraph-ltr fa fa-paragraph active"
-              onclick="paragraphLTR()"
-            ></button>
-            <button
-              class="paragraph-rtl fa fa-paragraph"
-              onclick="paragraphRTL()"
-            ></button>
-          </div>
+          <button
+            class="left fa fa-align-left active"
+            onclick="left()"
+          ></button>
+          <button class="center fa fa-align-center" onclick="center()"></button>
+          <button class="right fa fa-align-right" onclick="right()"></button>
+          <button
+            class="justify fa fa-align-justify"
+            onclick="justify()"
+          ></button>
+          <button
+            class="paragraph-ltr fa fa-paragraph active"
+            onclick="paragraphLTR()"
+          ></button>
+          <button
+            class="paragraph-rtl fa fa-paragraph"
+            onclick="paragraphRTL()"
+          ></button>
         </div>
         <div class="right-tools">
-          <div>
-            <button
-              class="download fa fa-floppy-o"
-              onclick="download()"
-            ></button>
-            <button class="print fa fa-print" onclick="print()"></button>
-          </div>
+          <button class="saveFile fa fa-floppy-o" onclick="saveFile()"></button>
+          <button class="print fa fa-print" onclick="print()"></button>
         </div>
       </div>
       <textarea
         class="text"
         id="text"
-        placeholder="start writing"
+        placeholder="start writing ..."
         style="font-family: Arial; font-size: 14px"
       ></textarea>
     </div>
