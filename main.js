@@ -13,7 +13,7 @@ const drawerHandler = () => {
     : (drawer.style.display = "block");
 };
 
-const fontFamiling = () => {
+const fontFamily = () => {
   const selectFontFamily = document.querySelector(".family-font");
   text.style.fontFamily = selectFontFamily.value;
 };
